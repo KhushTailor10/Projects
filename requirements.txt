@@ -1,2 +1,2 @@
 streamlit
-nltk
+english_words
