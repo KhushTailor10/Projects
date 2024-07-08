@@ -34,7 +34,7 @@ from random import choice
 # valid_words = [x for x in web2lowerset if len(x)==5]
 
 # Download necessary nltk data if not already present
-os.system("python nltk_downloader.py")
+os.system("python additional_libraries_downloader.py")
 from nltk.corpus import wordnet
 # Check if the word is a valid English word
 def is_valid_word(word):
