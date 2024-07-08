@@ -35,15 +35,10 @@ from random import choice
 
 # Download necessary nltk data if not already present
 # os.system("python additional_libraries_downloader.py")
-try:
-    import nltk
-    nltk.download('wordnet')
-    nltk.download('omw-1.4')
-except:
-    pip install nltk
-    import nltk
-    nltk.download('wordnet')
-    nltk.download('omw-1.4')
+
+import nltk
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 from nltk.corpus import wordnet
 # Check if the word is a valid English word
 def is_valid_word(word):
