@@ -26,12 +26,15 @@
 #     w14 = st.text_input(label = "",max_chars=1, key="w14")
 # with c5:
 #     w15 = st.text_input(label = "",max_chars=1, key="w15")
-
+import os
 import streamlit as st
 from random import choice
 # from english_words import get_english_words_set
 # web2lowerset = get_english_words_set(['web2'], lower=True)
 # valid_words = [x for x in web2lowerset if len(x)==5]
+
+# Download necessary nltk data if not already present
+os.system("python nltk_downloader.py")
 from nltk.corpus import wordnet
 # Check if the word is a valid English word
 def is_valid_word(word):
