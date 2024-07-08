@@ -29,9 +29,13 @@
 
 import streamlit as st
 from random import choice
-from english_words import get_english_words_set
-web2lowerset = get_english_words_set(['web2'], lower=True)
-valid_words = [x for x in web2lowerset if len(x)==5]
+# from english_words import get_english_words_set
+# web2lowerset = get_english_words_set(['web2'], lower=True)
+# valid_words = [x for x in web2lowerset if len(x)==5]
+from nltk.corpus import wordnet
+# Check if the word is a valid English word
+def is_valid_word(word):
+    return bool(wordnet.synsets(word))
 
 
 # List of possible words
@@ -572,7 +576,7 @@ with st.form(key='guess_form', clear_on_submit=True):
 #     else:
 #         st.error("Please enter a valid 5-letter word.")
 if submit_button and not st.session_state.game_over:
-    if len(guess) == 5 and guess.isalpha() and guess in valid_words:
+    if len(guess) == 5 and guess.isalpha() and is_valid_word(guess):
         feedback = check_guess(guess, st.session_state.word_to_guess)
         st.session_state.attempts.append((guess, feedback))
         st.session_state.attempt_count += 1
