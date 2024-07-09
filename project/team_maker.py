@@ -114,7 +114,8 @@ def generate_teams(players, ratings):
             sum_b += rating
 
     return team_a, team_b
-
+st.header("Team Maker")
+st.write("created by - Khush tailor")
 # Layout with two columns
 col1, col2 = st.columns(2)
 
